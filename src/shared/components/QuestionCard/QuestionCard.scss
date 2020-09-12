@@ -1,0 +1,13 @@
+@import "../../../mixins";
+@import "../../../variable";
+
+div.ak-question-card {
+  position: relative;
+  @include Container(2rem, 2rem);
+  display: flex;
+  width: 20%;
+  min-height: 8rem;
+  flex-direction: column;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  border-radius: 0.5rem;
+}

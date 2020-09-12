@@ -1,0 +1,10 @@
+@import "./mixins";
+
+div.ak-questions-cards-section {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  @include Container(4rem, 2rem);
+}

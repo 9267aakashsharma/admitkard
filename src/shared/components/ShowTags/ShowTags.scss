@@ -1,0 +1,20 @@
+@import "../../../mixins";
+@import "../../../variable";
+
+div.ak-tags {
+  position: relative;
+  display: inline-flex;
+  padding: 1rem 0;
+  align-items: stretch;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  p {
+    padding: 0.5rem 1rem;
+    margin: 0.25rem auto;
+    color: $text-secondary;
+    background-color: $tertiary;
+    border-radius: 1rem;
+  }
+}
