@@ -17,6 +17,7 @@ div.sidebar {
     width: 40%;
     opacity: 1;
     position: relative;
+
     div.add-question-inner {
       position: absolute;
       top: 50%;
@@ -44,6 +45,20 @@ div.sidebar {
         width: 100%;
       }
 
+      div.preview {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 70%;
+        h3 {
+          text-align: center;
+        }
+        div.ak-question-card {
+          width: 100%;
+        }
+      }
+
       div.add-tags {
         div.tags {
           display: inline-flex;
@@ -55,11 +70,36 @@ div.sidebar {
             height: 100%;
             background-color: $primary;
             border-radius: 0.25rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             svg {
               fill: $background-tertiary;
               width: 1.5rem;
               height: 1.5rem;
             }
+          }
+        }
+      }
+      div.confirmation {
+        button {
+          margin: 0.5rem 1rem;
+          padding: 0.5rem 1rem;
+          border-radius: 0.25rem;
+          border: none;
+          outline: none;
+          &:hover {
+            cursor: pointer;
+          }
+          &:first-child {
+            color: $background-tertiary;
+            background-color: $primary;
+            border: 2px solid $primary;
+          }
+          &:last-child {
+            color: $primary;
+            background-color: $background-tertiary;
+            border: 2px solid $primary;
           }
         }
       }

@@ -3,6 +3,7 @@ import Logo from "../Logo/Logo";
 import { DebounceInput } from "react-debounce-input";
 import "./Searchbar.scss";
 import { MdAdd } from "react-icons/md";
+import classNames from "classnames";
 
 interface Props {
   searchText: string;
@@ -25,7 +26,12 @@ const Searchbar = (props: Props) => {
           }}
         />
       </div>
-      <div className="searchbar-right" onClick={props.toggleAddQuestion}>
+      <div
+        className={classNames("searchbar-right", {
+          active: props.sendAddQuestionActive,
+        })}
+        onClick={props.toggleAddQuestion}
+      >
         <MdAdd />
       </div>
     </div>
