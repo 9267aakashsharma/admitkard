@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import "./App.scss";
 import { v4 as uuid } from "uuid";
-import { QuestionCard, Searchbar } from "./shared/components";
+import { AddQuestion, QuestionCard, Searchbar } from "./shared/components";
 
 export interface QuestionBank {
   id: string;
   question: string;
   topic: string;
-  tags?: string[];
+  tags: string[];
 }
 
 const apiData: QuestionBank[] = [
@@ -61,6 +61,13 @@ const apiData: QuestionBank[] = [
 const App = () => {
   const [questionCards, setQuestionCards] = useState<QuestionBank[]>(apiData);
   const [searchText, setSearchText] = useState<string>("");
+  const [isAddQuestionActive, setIsAddQuestionActive] = useState<boolean>(
+    false
+  );
+
+  const addQuestionCard = (question: QuestionBank) => {
+    setQuestionCards([...questionCards, question]);
+  };
 
   const deleteQuestionCards = (id: string) => {
     let tempCards = [...questionCards];
@@ -73,7 +80,12 @@ const App = () => {
 
   return (
     <div className="App">
-      <Searchbar searchText={searchText} setSearchText={setSearchText} />
+      <Searchbar
+        searchText={searchText}
+        setSearchText={setSearchText}
+        sendAddQuestionActive={isAddQuestionActive}
+        toggleAddQuestion={() => setIsAddQuestionActive(!isAddQuestionActive)}
+      />
       <div className="ak-questions-cards-section">
         {questionCards
           .filter((questionCard) => {
@@ -95,6 +107,14 @@ const App = () => {
             />
           ))}
       </div>
+      {isAddQuestionActive && (
+        <AddQuestion
+          addQuestion={(question: QuestionBank) => {
+            addQuestionCard(question);
+          }}
+          toggleAddQuestion={() => setIsAddQuestionActive(!isAddQuestionActive)}
+        />
+      )}
     </div>
   );
 };

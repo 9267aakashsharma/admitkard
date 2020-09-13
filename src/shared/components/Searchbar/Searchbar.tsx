@@ -6,6 +6,8 @@ import { MdAdd } from "react-icons/md";
 
 interface Props {
   searchText: string;
+  sendAddQuestionActive: boolean;
+  toggleAddQuestion: () => void;
   setSearchText: (text: string) => void;
 }
 
@@ -23,7 +25,7 @@ const Searchbar = (props: Props) => {
           }}
         />
       </div>
-      <div className="searchbar-right">
+      <div className="searchbar-right" onClick={props.toggleAddQuestion}>
         <MdAdd />
       </div>
     </div>

@@ -9,6 +9,7 @@ div.searchbar {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
+  z-index: 1;
   div.searchbar-left {
     display: inline-flex;
     width: 50%;
