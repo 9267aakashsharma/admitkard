@@ -8,5 +8,17 @@
 }
 
 @mixin theme-shadow-secondary {
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), 0 2px 2px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 4px 4px rgba(73, 67, 67, 0.25), 0 2px 2px rgba(0, 0, 0, 0.22);
+}
+
+@mixin for-mobile-only {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-only {
+  @media (max-width: 748px) {
+    @content;
+  }
 }

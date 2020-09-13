@@ -10,6 +10,11 @@ div.searchbar {
   justify-content: space-between;
   flex-direction: row;
   z-index: 1;
+
+  @include for-mobile-only {
+    padding: 0.5rem 1rem;
+  }
+
   div.searchbar-left {
     display: inline-flex;
     width: 50%;
@@ -23,6 +28,10 @@ div.searchbar {
       background-color: $background-primary;
       border: none;
       padding: 0.25rem 1rem;
+
+      @include for-mobile-only {
+        margin: auto 1rem;
+      }
 
       &:focus {
         border: none;

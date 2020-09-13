@@ -18,6 +18,16 @@ div.sidebar {
     opacity: 1;
     position: relative;
 
+    @include for-mobile-only {
+      margin-top: 1rem;
+      width: 100%;
+    }
+
+    @include for-tablet-only {
+      margin-top: 2rem;
+      width: 100%;
+    }
+
     div.add-question-inner {
       position: absolute;
       top: 50%;

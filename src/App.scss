@@ -6,12 +6,15 @@ div.App {
   background-color: $background-primary;
   div.ak-questions-cards-section {
     position: relative;
-    width: fit-content;
     padding: 4rem;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+
+    @include for-mobile-only {
+      padding: 2rem 0.5rem;
+    }
   }
 }

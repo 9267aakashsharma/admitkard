@@ -1,3 +1,6 @@
+@import "../../../mixins";
+@import "../../../variable";
+
 div.ad-logo {
   position: relative;
   width: fit-content;
@@ -10,5 +13,8 @@ div.ad-logo {
     width: 8rem;
     height: auto;
     margin: auto 0;
+    @include for-mobile-only {
+      width: 4rem;
+    }
   }
 }
