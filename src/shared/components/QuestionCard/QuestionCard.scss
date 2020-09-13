@@ -8,6 +8,34 @@ div.ak-question-card {
   width: 20%;
   min-height: 8rem;
   flex-direction: column;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  @include theme-shadow-primary;
   border-radius: 0.5rem;
+  background-color: $background-tertiary;
+  div.delete-question-card {
+    position: absolute;
+    width: fit-content;
+    bottom: 0;
+    right: 0;
+    margin: 1rem;
+    opacity: 0;
+    transition: opacity 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    svg {
+      fill: $text-primary;
+      width: 1.5rem;
+      height: auto;
+    }
+
+    &:hover {
+      svg {
+        fill: $secondary;
+        cursor: pointer;
+      }
+    }
+  }
+  &:hover {
+    div.delete-question-card {
+      opacity: 1;
+    }
+  }
 }

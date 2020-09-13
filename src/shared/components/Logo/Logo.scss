@@ -1,0 +1,14 @@
+div.ad-logo {
+  position: relative;
+  width: fit-content;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 8rem;
+    height: auto;
+    margin: auto 0;
+  }
+}

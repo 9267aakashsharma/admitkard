@@ -2,3 +2,11 @@
   padding: $padding-value;
   margin: $margin-value;
 }
+
+@mixin theme-shadow-primary {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+@mixin theme-shadow-secondary {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), 0 2px 2px rgba(0, 0, 0, 0.22);
+}

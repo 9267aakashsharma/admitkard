@@ -1,0 +1,42 @@
+@import "../../../variable";
+@import "../../../mixins";
+
+div.searchbar {
+  position: relative;
+  padding: 1rem 3rem;
+  background-color: $background-tertiary;
+  @include theme-shadow-secondary;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  div.searchbar-left {
+    display: inline-flex;
+    width: 50%;
+    flex-direction: row;
+    justify-content: space-between;
+
+    input {
+      flex-grow: 1;
+      height: 2rem;
+      margin: auto 2rem;
+      background-color: $background-primary;
+      border: none;
+      padding: 0.25rem 1rem;
+
+      &:focus {
+        border: none;
+        outline: none;
+      }
+    }
+  }
+  div.searchbar-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      fill: $primary;
+    }
+  }
+}

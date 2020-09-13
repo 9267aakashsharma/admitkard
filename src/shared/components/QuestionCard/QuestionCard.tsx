@@ -1,10 +1,12 @@
 import React from "react";
 import { QuestionBank } from "../../../App";
 import { ShowTags } from "../index";
+import { MdDelete } from "react-icons/md";
 import "./QuestionCard.scss";
 
 interface Props {
   QuestionCardDetails: QuestionBank;
+  deleteQuestionCards: (id: string) => void;
 }
 
 const QuestionCard = (props: Props) => {
@@ -15,6 +17,14 @@ const QuestionCard = (props: Props) => {
       {props.QuestionCardDetails.tags && (
         <ShowTags tags={props.QuestionCardDetails.tags} />
       )}
+      <div
+        className="delete-question-card"
+        onClick={() => {
+          props.deleteQuestionCards(props.QuestionCardDetails.id);
+        }}
+      >
+        <MdDelete />
+      </div>
     </div>
   );
 };
